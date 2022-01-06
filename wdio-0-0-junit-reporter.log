@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="My Login application" timestamp="2022-01-06T17:51:35" time="5.805" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="My Login application"/>
+      <property name="capabilities" value="chrome.97_0_4692_71.macosx"/>
+      <property name="file" value="./test/specs/example.e2e.js"/>
+    </properties>
+    <testcase classname="chrome.97_0_4692_71.macosx.My_Login_application" name="should login with valid credentials" time="5.805">
+      <system-out><![CDATA[
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/url - {"url":"https://www.opencart.com/index.php?route=account/login"}
+RESULT: {"url":"https://www.opencart.com/index.php?route=account/login"}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element - {"using":"css selector","value":"#input-email"}
+RESULT: {"using":"css selector","value":"#input-email"}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element/5f9c2f38-b328-4fe5-90a7-b4d6552cc13a/clear - {}
+RESULT: {}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element/5f9c2f38-b328-4fe5-90a7-b4d6552cc13a/value - {"text":"testabc@test.com"}
+RESULT: {"text":"testabc@test.com"}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element - {"using":"css selector","value":"#input-password"}
+RESULT: {"using":"css selector","value":"#input-password"}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element/9a996f3f-eab6-46ed-91f5-578bbd6c4d39/clear - {}
+RESULT: {}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element/9a996f3f-eab6-46ed-91f5-578bbd6c4d39/value - {"text":"testme123"}
+RESULT: {"text":"testme123"}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element - {"using":"css selector","value":"button[type=\"submit\"]"}
+RESULT: {"using":"css selector","value":"button[type=\"submit\"]"}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element/5bed22f1-2044-426b-bf50-12b64009e349/click - {}
+RESULT: {}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element - {"using":"css selector","value":"#input-pin"}
+RESULT: {"using":"css selector","value":"#input-pin"}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element/f7a3e7e7-8800-457b-9177-133be5d09c28/clear - {}
+RESULT: {}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element/f7a3e7e7-8800-457b-9177-133be5d09c28/value - {"text":"1100"}
+RESULT: {"text":"1100"}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element - {"using":"css selector","value":"button[type=\"submit\"]"}
+RESULT: {"using":"css selector","value":"button[type=\"submit\"]"}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element/b67af324-0f7a-4304-ac72-497de1b17fe9/click - {}
+RESULT: {}
+COMMAND: POST /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element - {"using":"css selector","value":"#account-account > div.page-header > div > p"}
+RESULT: {"using":"css selector","value":"#account-account > div.page-header > div > p"}
+COMMAND: GET /session/6f0f4fe11ce3d0ee688ea895ea7d70a5/element/552b9981-78f3-48b2-95e7-0ee9b1a7a826/text - {}
+RESULT: {}
+COMMAND: DELETE /session/6f0f4fe11ce3d0ee688ea895ea7d70a5 - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
