@@ -1,3 +1,9 @@
+// const { TimelineService } = require('wdio-timeline-reporter/timeline-service');
+// const {ReportAggregator, HtmlReporter} = require('wdio-html-nice-reporter');
+
+// Uncomment onPrepare and onComplete hooks to run html reporter (wdio-html-nice-reporter)
+// reportAggregator = new ReportAggregator();
+
 exports.config = {
     //
     // ====================
@@ -110,7 +116,10 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
+    services: [
+        'chromedriver',
+    // [TimelineService], //enable only when running using Timeline service
+],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -132,10 +141,38 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    // reporters: [['timeline', { outputDir: './desired_location' }], 
+    // 'spec', 
+    // 'dot',
+    // 'json'],
 
-
+    //For HTML Reporter, please use the below code for reporters
+    // Please make sure to comment line numbers 143 to 146
+    // reporters: [
+    //     ["html-nice", {
+    //         outputDir: './reports/html-reports/',
+    //         filename: 'report.html',
+    //         reportTitle: 'Test Report Title',
+    //         linkScreenshots: true,
+    //         //to show the report in a browser when done
+    //         showInBrowser: true,
+    //         collapseTests: false,
+    //         //to turn on screenshots after every test
+    //         useOnAfterCommandForScreenshot: true,
+    //         //to initialize the logger
+    //         // LOG: log4j.getLogger("default")
+    //     }
+    //     ]
+    // ],
     
+    // For allure, use below one:
+    reporters: [
+                ['allure', {
+                outputDir: 'allure-results',
+                disableWebdriverScreenshotsReporting: false,
+            }]
+        ],
+        
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -157,7 +194,16 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     // onPrepare: function (config, capabilities) {
+
+    //     reportAggregator = new ReportAggregator({
+    //         outputDir: './reports/html-reports/',
+    //         filename: 'master-report.html',
+    //         reportTitle: 'Master Report',
+    //         browserName : capabilities.browserName,
+    //       });
+    //     reportAggregator.clean() ;
     // },
+    
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.
@@ -273,6 +319,9 @@ exports.config = {
      * @param {<Object>} results object containing test results
      */
     // onComplete: function(exitCode, config, capabilities, results) {
+    //     (async () => {
+    //         await reportAggregator.createReport();
+    //     })();
     // },
     /**
     * Gets executed when a refresh happens.

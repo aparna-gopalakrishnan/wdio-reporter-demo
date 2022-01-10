@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "devDependencies": {
+        "@wdio/allure-reporter": "^5.0.0",
         "@wdio/cli": "^7.16.12",
         "@wdio/dot-reporter": "^7.16.11",
         "@wdio/junit-reporter": "^7.16.12",
@@ -20,6 +21,7 @@
     },
     "dependencies": {
         "wdio-dot-reporter": "0.0.10",
+        "wdio-html-nice-reporter": "^7.9.1",
         "wdio-timeline-reporter": "^5.1.4"
     }
 }
