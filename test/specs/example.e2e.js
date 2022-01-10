@@ -8,6 +8,6 @@ describe('My Login application', () => {
         await LoginPage.login('testabc@test.com', 'testme123');
         await LoginPage.enterPinToCompleteLogin('1100');
         await expect(AccountPage.welcomeMessage).toHaveTextContaining(
-            'Welcome to OpenCar!');
+            'Welcome to OpenCart!');
     });
 });
